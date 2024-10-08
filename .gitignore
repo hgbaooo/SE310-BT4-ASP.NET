@@ -1,0 +1,8 @@
+
+ QuanLySanPham/.env
+/ QuanLySanPham/bin
+/ QuanLySanPham/obj
+ QuanLySanPham/.DS_Store
+/ QuanLySanPham/Properties
+/.idea
+.DS_Store

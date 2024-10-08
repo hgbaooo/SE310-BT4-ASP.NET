@@ -1,0 +1,46 @@
+@model IEnumerable<QuanLySanPham.Models.Product>
+
+@{
+    ViewBag.Title = "Product List";
+}
+
+<h2>Product List</h2>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.CatalogId)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductCode)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+        <th>@Html.DisplayNameFor(model => model.Picture)</th>
+        <th>@Html.DisplayNameFor(model => model.UnitPrice)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.CatalogId
+            </td>
+            <td>
+                @item.ProductCode
+            </td>
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                <img src="~/@item.Picture"
+                     alt="@item.Picture"
+                     width="100"
+                     height="100"/>
+            </td>
+            <td>
+                @item.UnitPrice
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
